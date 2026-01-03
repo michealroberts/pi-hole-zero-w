@@ -1,0 +1,42 @@
+# Get editor completions based on the config schema:
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts:
+add_newline = true
+
+# Prompt format on a single line:
+format = '$directory$git_branch$git_status$python$container$character'
+
+# Replace the '❯' symbol in the prompt with '➜':
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[➜](bold red)'
+
+# Directory display settings:
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = 'bold cyan'
+
+# Git branch display:
+[git_branch]
+symbol = '🔀 '
+style = 'bold purple'
+
+# Git status indicators:
+[git_status]
+style = 'bold red'
+
+# Python virtual environment:
+[python]
+symbol = '🐍 '
+style = 'bold yellow'
+
+# Container indicator:
+[container]
+symbol = '⬢'
+style = 'bold blue'
+
+# Disable the package module:
+[package]
+disabled = true
