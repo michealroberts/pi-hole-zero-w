@@ -19,6 +19,7 @@
         "ms-python.python",
         "redhat.ansible",
         "redhat.vscode-yaml",
+        "tamasfe.even-better-toml",
         "usernamehw.errorlens",
         "wholroyd.jinja"
       ],
