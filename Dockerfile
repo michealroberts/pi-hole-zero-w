@@ -61,3 +61,11 @@ ENV PATH="/home/${USERNAME}/.local/bin:${PATH}"
 RUN echo 'eval "$(starship init bash)"' >> /home/${USERNAME}/.bashrc
 
 # //////////////////////////////////////////////////////////////////////////////////// #
+
+RUN mkdir -p /home/${USERNAME}/.config
+
+RUN chown ${USERNAME}:${USERNAME} /home/${USERNAME}/.config
+
+COPY --chown=${USERNAME}:${USERNAME} config/starship.toml /home/${USERNAME}/.config/starship.toml
+
+# //////////////////////////////////////////////////////////////////////////////////// #
