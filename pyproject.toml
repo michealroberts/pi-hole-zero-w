@@ -1,0 +1,9 @@
+[project]
+name = "pi-hole-zero-w"
+version = "0.1.0"
+description = "Ansible playbook for deploying Pi-hole on Raspberry Pi Zero W"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "ansible>=13.2.0",
+]
