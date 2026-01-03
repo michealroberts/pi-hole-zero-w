@@ -1,0 +1,80 @@
+{
+  "name": "pi-hole-zero-w",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": "..",
+    "target": "development"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "charliermarsh.ruff",
+        "ms-python.python",
+        "redhat.ansible",
+        "redhat.vscode-yaml",
+        "usernamehw.errorlens",
+        "wholroyd.jinja"
+      ],
+      "settings": {
+        "ansible.python.interpreterPath": "${workspaceFolder}/.venv/bin/python",
+        "ansible.validation.enabled": true,
+        "ansible.validation.lint.enabled": true,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "explicit"
+        },
+        "editor.cursorBlinking": "smooth",
+        "editor.cursorSmoothCaretAnimation": "on",
+        "editor.cursorStyle": "line",
+        "editor.formatOnSave": true,
+        "editor.rulers": [
+          88
+        ],
+        "explorer.compactFolders": true,
+        "explorer.confirmDelete": true,
+        "files.associations": {
+          "*.yml": "ansible",
+          "*.yaml": "ansible",
+          "hosts.ini": "ini",
+          "*.j2": "jinja"
+        },
+        "ruff.codeAction.disableRuleComment": {
+          "enable": true
+        },
+        "ruff.enable": true,
+        "ruff.fixAll": true,
+        "ruff.importStrategy": "fromEnvironment",
+        "ruff.lint.enable": true,
+        "ruff.organizeImports": true,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash",
+            "args": [
+              "-l"
+            ]
+          }
+        },
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff",
+          "editor.formatOnSave": true,
+          "editor.semanticHighlighting.enabled": true
+        },
+        "[ansible]": {
+          "editor.tabSize": 2,
+          "editor.insertSpaces": true
+        },
+        "[jinja]": {
+          "editor.tabSize": 2,
+          "editor.insertSpaces": true
+        }
+      }
+    }
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,readonly"
+  ],
+  "remoteUser": "vscode"
+}
